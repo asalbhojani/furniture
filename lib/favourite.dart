@@ -217,6 +217,28 @@ class _favouriteState extends State<favourite> {
                                                // ]
                                            ),
                                          ),
+
+                                          // Container(
+                                          //   width: 160,
+                                          //   height: 150,
+                                          //   decoration: BoxDecoration(
+                                          //     borderRadius: BorderRadius.only(topLeft: Radius.circular(15),bottomLeft:Radius.circular(15) ),
+                                          //     color: Theme.of(context).primaryColor,
+                                          //     image: DecorationImage(
+                                          //         colorFilter: ColorFilter.mode(Color(0xf44d4d4d).withOpacity(0.2), BlendMode.darken),
+                                          //         fit: BoxFit.cover,
+                                          //         image: AssetImage("${img[index]}")
+                                          //     ),
+                                          //     // boxShadow: [
+                                          //     //   BoxShadow(
+                                          //     //     color: Color(0xf44d4d4d),
+                                          //     //     spreadRadius: 1,
+                                          //     //     blurRadius: 5,
+                                          //     //     offset: Offset(1, 1),
+                                          //     //   )
+                                          //     // ]
+                                          //   ),
+                                          // ),
                                          Container(
                                            width: 35,
                                            height: 30,
