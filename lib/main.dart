@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture/Home.dart';
 import 'package:furniture/Insert.dart';
+import 'package:furniture/chairs.dart';
 import 'package:furniture/userProfile.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -38,7 +39,7 @@ import 'firebase_options.dart';
         debugShowCheckedModeBanner: false,
         theme: MyThemes.lightTheme,
         darkTheme: MyThemes.darkTheme,
-        home:favourite(),
+        home:Chair(),
       );
     },
   );
