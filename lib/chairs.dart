@@ -111,8 +111,6 @@ class _ChairState extends State<Chair> {
         child: Column(
           children: [
 
-        Stack(
-        children: <Widget>[
         Container(
           width: double.infinity,
           height: 100,
@@ -239,93 +237,100 @@ class _ChairState extends State<Chair> {
                                             mainAxisSpacing: 20,
                                             crossAxisSpacing: 20,
                                             childAspectRatio: 300/420,
-                                            children: List.generate(dataLength, (index) => Stack(
-                                              children: [
+                                            children: List.generate(1, (index) => Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children:[
+                                                  Stack(
+                                                    children: <Widget>[
 
-                                               Column(
-                                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                                   children:[
-                                                     Stack(
-                                                       children: <Widget>[
+                                                                   Container(
+                                                                     width: 300,
+                                                                     height: 170,
+                                                                     decoration: BoxDecoration(
+                                                                         borderRadius: BorderRadius.circular(15),
+                                                                         color: Theme.of(context).iconTheme.color,
+                                                                         image: DecorationImage(
+                                                                             colorFilter: ColorFilter.mode(Color(0xf44d4d4d).withOpacity(0.2), BlendMode.darken),
+                                                                             fit: BoxFit.cover,
+                                                                             image: NetworkImage("$Img")
+                                                                         ),
+                                                                         boxShadow: [
+                                                                           BoxShadow(
+                                                                             color: Color(0xf44d4d4d),
+                                                                             spreadRadius: 1,
+                                                                             blurRadius: 5,
+                                                                             offset: Offset(1, 1),
+                                                                           )
+                                                                         ]
+                                                                     ),
+                                                                   ),
+                                                                   Container(
+                                                                     width: 40,
+                                                                     height: 33,
+                                                                     margin: EdgeInsets.only(left: 125,right: 10,),
+                                                                     decoration: BoxDecoration(
 
-                                                                      Container(
-                                                                        width: 300,
-                                                                        height: 170,
-                                                                        decoration: BoxDecoration(
-                                                                            borderRadius: BorderRadius.circular(15),
-                                                                            color: Theme.of(context).primaryColor,
-                                                                            image: DecorationImage(
-                                                                                colorFilter: ColorFilter.mode(Color(0xf44d4d4d).withOpacity(0.2), BlendMode.darken),
-                                                                                fit: BoxFit.cover,
-                                                                                image: NetworkImage("${Img[index]}")
-                                                                            ),
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                color: Color(0xf44d4d4d),
-                                                                                spreadRadius: 1,
-                                                                                blurRadius: 5,
-                                                                                offset: Offset(1, 1),
-                                                                              )
-                                                                            ]
-                                                                        ),
-                                                                      ),
-                                                                      Container(
-                                                                        width: 40,
-                                                                        height: 33,
-                                                                        margin: EdgeInsets.only(left: 125,right: 10,top: 5),
-                                                                        decoration: BoxDecoration(
+                                                                         shape: BoxShape.circle,
+                                                                         color: Theme.of(context).primaryColor,
+                                                                         boxShadow: [
+                                                                           BoxShadow(
+                                                                             color: Color(0xf343434),
+                                                                             spreadRadius: 1,
+                                                                             blurRadius: 5,
+                                                                             offset: Offset(2, 2),
+                                                                           )
+                                                                         ]
+                                                                       // border: Border.all(color: Color(0xffa19e9e))
+                                                                     ),
+                                                                     child: IconButton(
+                                                                       onPressed: () {
+                                                                         toggleFavorite(Id);
+                                                                       },
+                                                                       icon: isFavourite ? Icon(CupertinoIcons.heart_fill,color: Color(0xffff6d40)):
+                                                                       Icon(CupertinoIcons.heart,color: Color(0xffff6d40)
+                                                                           ),
 
-                                                                            shape: BoxShape.circle,
-                                                                            color: Theme.of(context).primaryColor,
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                color: Color(0xf343434),
-                                                                                spreadRadius: 1,
-                                                                                blurRadius: 5,
-                                                                                offset: Offset(2, 2),
-                                                                              )
-                                                                            ]
-                                                                          // border: Border.all(color: Color(0xffa19e9e))
-                                                                        ),
-                                                                        child: isFavourite? GestureDetector(
-                                                                            onTap: (){
-                                                                              toggleFavorite(Id);
-                                                                            },
-                                                                            child: Icon(CupertinoIcons.heart_fill,color: Color(0xffff6d40))
-                                                                        ):
-                                                                        Icon(CupertinoIcons.heart,color: Color(0xffff6d40)
-                                                                        ),
-                                                                      ),],),
-                                                                  SizedBox(height: 10,),
-                                                                  Text('$Name',style: GoogleFonts.poppins(
-                                                                    fontSize: 14,
-                                                                    fontWeight: FontWeight.w500,
-                                                                    color:Theme.of(context).iconTheme.color,
-                                                                  ),),
+                                                                     ),
+                                                                     // isFavourite? GestureDetector(
+                                                                     //     onTap: (){
+                                                                     //       toggleFavorite(Id);
+                                                                     //     },
+                                                                     //     child: Icon(CupertinoIcons.heart_fill,color: Color(0xffff6d40))
+                                                                     // ):
+                                                                     // GestureDetector(
+                                                                     //   onTap: (){
+                                                                     //     toggleFavorite(Id);
+                                                                     //   },
+                                                                     //   child: Icon(CupertinoIcons.heart,color: Color(0xffff6d40)
+                                                                     //   ),
+                                                                     // ),
+                                                                   )],),
+                                                               SizedBox(height: 10,),
+                                                               Text('$Name',style: GoogleFonts.poppins(
+                                                                 fontSize: 14,
+                                                                 fontWeight: FontWeight.w500,
+                                                                 color:Theme.of(context).iconTheme.color,
+                                                               ),),
 
-                                                                  Row(
-                                                                    children: [
+                                                               Row(
+                                                                 children: [
 
-                                                                      Icon(Icons.star_outline_rounded,color: Color(
-                                                                          0xf0343434)),
-                                                                      SizedBox(width: 5,),
-                                                                      Text("5.00", style: GoogleFonts.poppins(
-                                                                        fontWeight: FontWeight.w600,
-                                                                        color:  Color(0xf0343434),
-                                                                      ),),
-                                                                      SizedBox(width: 70,),
-                                                                      Text('\$$Price',style: GoogleFonts.poppins(
-                                                                        fontSize: 16,
-                                                                        fontWeight: FontWeight.w600,
-                                                                        color: Color(0xffff6d40),
-                                                                      ),),
-                                                                    ],
-                                                                  ),
-                                                                ]),
-
-
-                                              ],
-                                            )),
+                                                                   Icon(Icons.star_outline_rounded,color: Color(
+                                                                       0xf0343434)),
+                                                                   SizedBox(width: 5,),
+                                                                   Text("5.00", style: GoogleFonts.poppins(
+                                                                     fontWeight: FontWeight.w600,
+                                                                     color:  Color(0xf0343434),
+                                                                   ),),
+                                                                   SizedBox(width: 70,),
+                                                                   Text('\$$Price',style: GoogleFonts.poppins(
+                                                                     fontSize: 16,
+                                                                     fontWeight: FontWeight.w600,
+                                                                     color: Color(0xffff6d40),
+                                                                   ),),
+                                                                 ],
+                                                               ),
+                                                             ])),
 
                                           ),
                                         );
@@ -340,8 +345,6 @@ class _ChairState extends State<Chair> {
               ],
             ),
           ),
-
-        ]),
 
           ],
         ),
