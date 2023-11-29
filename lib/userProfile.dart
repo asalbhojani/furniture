@@ -109,7 +109,6 @@ class _userProfileState extends State<userProfile> {
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
 
-
                                             Container(
                                               padding: EdgeInsets.all(7.0),
                                               margin: EdgeInsets.only(left: 40, top: 50),
